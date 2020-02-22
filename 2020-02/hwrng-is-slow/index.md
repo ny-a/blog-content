@@ -1,6 +1,6 @@
 ---
 title: "/dev/randomが遅かったので高速化を試してみました"
-date: 2020-02-22
+date: 2020-02-23
 ---
 
 ArchLinux をインストールしているノート PC に `rng-tools` をインストールして、
