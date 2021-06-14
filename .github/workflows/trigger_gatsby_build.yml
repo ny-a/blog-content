@@ -10,8 +10,12 @@ jobs:
     steps:
       - name: Dispatch Gatsby build
         run: |
-          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json"  -H "Content-Type: application/json" https://api.github.com/repos/ny-a/blog2/dispatches --data '{"event_type": "build_application"}'
+          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.v3+json"  -H "Content-Type: application/json" https://api.github.com/repos/ny-a/blog2/dispatches --data '{"event_type": "build_application"}'
 
       - name: Dispatch Gridsome build
         run: |
-          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.everest-preview+json"  -H "Content-Type: application/json" https://api.github.com/repos/ny-a/gridsome-blog/dispatches --data '{"event_type": "build_application"}'
+          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.v3+json"  -H "Content-Type: application/json" https://api.github.com/repos/ny-a/gridsome-blog/dispatches --data '{"event_type": "build_application"}'
+
+      - name: Dispatch Hugo build
+        run: |
+          curl -XPOST -u "${{ secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" -H "Accept: application/vnd.github.v3+json"  -H "Content-Type: application/json" https://api.github.com/repos/ny-a/hugo-blog/dispatches --data '{"event_type": "build_application"}'
